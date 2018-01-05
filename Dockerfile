@@ -9,7 +9,6 @@ ENV LANG="en_US.UTF-8" \
 ### SETUP
 COPY assets /assets
 RUN set -ex ; \
-    addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ; \
     apk add --no-cache --virtual .build-deps \
       gcc make musl-dev ncurses-dev openssl-dev readline-dev wget ; \
     mv /assets/entrypoint.sh / ; chmod +x /entrypoint.sh ; \
